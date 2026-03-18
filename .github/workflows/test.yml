@@ -40,10 +40,10 @@ jobs:
           fi
 
           if [ -z "$MY_PASS" ]; then
-            echo "MY_PASSWORD secret is not set!"
+            echo "MY_PASS secret is not set!"
             exit 1
           else
-            echo "MY_PASSWORD is configured"
+            echo "MY_PASS is configured"
           fi
 
       - name: Check required files exist
