@@ -26,7 +26,7 @@ for time_stomp in weather_data:
 
 if will_rain:
     MY_EMAIL = os.environ.get("MY_EMAIL")
-    APP_PASS = os.environ.get("APP_PASS")
+    APP_PASS = os.environ.get("MY_PASS")
     RECEIVER = os.environ.get("RECEIVER")
 
     with SMTP("smtp.gmail.com", 587) as connection:
