@@ -36,7 +36,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
+          
+      - name: Verify Secret Presence
+        run: |
+          if [ -z "${{ secrets.OWM_API_KEY }}" ]; then
+            echo "Error: OWM_API_KEY is not set in GitHub Secrets!"
+            exit 1
+          else
+            echo "Success: OWM_API_KEY is available."
+          fi
+          
       - name: Run script
         env:
           # Your secrets are available as environment variables
