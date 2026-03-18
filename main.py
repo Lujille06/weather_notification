@@ -2,7 +2,7 @@ import requests
 from smtplib import SMTP
 import os 
 
-API_KEY = "d2d2ce7acdf2c2add6536b9e07567c64"
+API_KEY = os.environ.get("OWM_API_KEY")
 MY_LAT = os.environ.get("MY_LAT")
 MY_LONG = os.environ.get("MY_LON")
 
