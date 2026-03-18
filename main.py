@@ -3,6 +3,11 @@ from smtplib import SMTP
 import os 
 
 API_KEY = os.environ.get("OWM_API_KEY")
+if API_KEY:
+    print(f"Key loaded: {API_KEY[0]}...{API_KEY[-1]} (Length: {len(API_KEY)})")
+else:
+    print("Key not found in environment!")
+    
 MY_LAT = os.environ.get("MY_LAT")
 MY_LONG = os.environ.get("MY_LON")
 
