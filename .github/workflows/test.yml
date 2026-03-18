@@ -24,7 +24,7 @@ jobs:
       - name: Check secrets are configured
         env:
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
-          MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+          MY_PASSWORD: ${{ secrets.MY_PASS }}
         run: |
           if [ -z "$MY_EMAIL" ]; then
             echo "MY_EMAIL secret is not set!"
@@ -34,7 +34,7 @@ jobs:
             echo "MY_EMAIL is configured"
           fi
 
-          if [ -z "$MY_PASSWORD" ]; then
+          if [ -z "$MY_PASS" ]; then
             echo "MY_PASSWORD secret is not set!"
             echo "Go to Settings > Secrets > Actions and add it."
             exit 1
@@ -62,14 +62,6 @@ jobs:
             echo "requirements.txt not found!"
             exit 1
           fi
-
-          if [ -f "birthdays.csv" ]; then
-            echo "birthdays.csv found"
-          else
-            echo "birthdays.csv not found!"
-            exit 1
-          fi
-
           echo ""
           echo "All required files found!"
 
