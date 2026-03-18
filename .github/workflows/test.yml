@@ -24,8 +24,9 @@ jobs:
 
       - name: Check secrets are configured
         env:
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
-          MY_PASSWORD: ${{ secrets.MY_PASS }}
+          MY_PASS: ${{ secrets.MY_PASS }}
         run: |
           if [ -z "$MY_EMAIL" ]; then
             echo "MY_EMAIL secret is not set!"
